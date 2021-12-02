@@ -12,6 +12,13 @@ public class LL<Type> extends Node<Type> implements Stack<Type> {
         size=0;
     }
 
+    public LL(int size,int chunk){
+        headNode=new Node<Type>();
+        //currentNode= headNode;
+        tailNode=headNode;
+        size=0;
+    }
+
     @Override
     public void clear() {
         tailNode=headNode;
@@ -30,6 +37,7 @@ public class LL<Type> extends Node<Type> implements Stack<Type> {
         Type tmp= (Type) tailNode.getItem();
         tailNode.getPrev().setNext(null);
         tailNode=tailNode.getPrev();
+        size--;
         return tmp;
     }
 

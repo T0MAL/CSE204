@@ -151,4 +151,41 @@ public class Arr <Type> implements List<Type> {
         }
         return -1;
     }
+
+    public void update(Type item){
+        if(currPos()==size-1){
+            remove();
+            append(item);
+            return;
+        }
+        remove();
+        insert(item);
+    }
+
+    public void duplicate(){
+        insert(getValue());
+    }
+
+    public static void main(String[] args) {
+        Arr<Integer> ar=new Arr<>();
+        ar.append(1);
+        ar.append(2);
+        ar.append(3);
+        ar.append(4);
+        ar.append(5);
+        ar.moveToPos(4);
+        ar.update(69);
+       // System.out.println(ar.getValue());
+        ar.moveToPos(3);
+        ar.duplicate();
+        ar.moveToStart();
+
+        for(int i=0;i<ar.length();i++){
+            System.out.println(ar.getValue());
+            ar.next();
+
+        }
+    }
+
+
 }

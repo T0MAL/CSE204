@@ -14,6 +14,16 @@ public class Arr<Type> implements Stack<Type> {
         dir=1;
     }
 
+    Arr(Type[] lst,int dir){
+        setDirection(dir);
+        this.dir=dir;
+        this.chunk=lst.length;
+        size=lst.length;
+        for(int i=0;i<lst.length;i++){
+            push(lst[0]);
+        }
+    }
+
     @Override
     public void clear() {
         if(dir==1)
@@ -58,7 +68,7 @@ public class Arr<Type> implements Stack<Type> {
     @Override
     public Type pop() {
         int l=length();
-        assert l!=0:"Stack is empty";
+        assert l>1:"Stack is empty";
         if(dir==1)
             return stack[top--];
         else
@@ -91,4 +101,19 @@ public class Arr<Type> implements Stack<Type> {
             this.dir=dir;
         }
     }
+
+    public static void main(String[] args) {
+        Arr<Integer> a=new Arr<>(5,19);
+        a.push(1);
+        a.push(2);
+        a.push(3);
+        System.out.println(a.pop());
+        System.out.println(a.pop());
+        a.push(69);
+        System.out.println(a.pop());
+        System.out.println(a.length());
+        System.out.println(a.pop());
+        System.out.println(a.pop());
+    }
+
 }

@@ -23,7 +23,7 @@ public class Main {
         Scanner scn = new Scanner(System.in);
         int size = scn.nextInt();
         int chunk = scn.nextInt();
-        Arr<Integer> lst = new Arr<Integer>();
+        LL<Integer> lst = new LL<Integer>();
         while (size > 0) {
             int n = scn.nextInt();
             lst.append(n);
