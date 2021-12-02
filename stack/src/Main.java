@@ -4,7 +4,6 @@ public class Main {
     public static void print(Stack st){
         int l= st.length();
         int[] a=new int[l];
-        Stack<Integer> sttt=new LL<>();
         while(l>0){
             int tmp= (int) st.pop();
             a[l-1]=tmp;
