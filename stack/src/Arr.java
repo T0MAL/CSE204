@@ -15,19 +15,27 @@ public class Arr<Type> implements Stack<Type> {
     }
 
     Arr(Type[] lst,int dir){
-        setDirection(dir);
         this.dir=dir;
         this.chunk=lst.length;
-        size=lst.length;
-        for(int i=0;i<lst.length;i++){
-            push(lst[0]);
+        this.size=lst.length;
+        if(dir==-1){
+            top=size;
+
         }
+        else{
+            top=-1;
+        }
+        stack=lst;
+        //System.out.println(stack);
     }
 
     @Override
     public void clear() {
-        if(dir==1)
-            top=-1;
+        int l=length();
+        assert l>0:"Stack is empty";
+        if(dir==1) {
+            top = -1;
+        }
         else{
             top=size;
         }
@@ -49,9 +57,9 @@ public class Arr<Type> implements Stack<Type> {
                 push(item);
             }
         }
-        else{
-            if (top >0)
-                stack[--top] = item;
+        else if(dir==-1){
+            if (top>0){
+                stack[--top] = item;}
             else {
                 Type[] tmp = stack;
                 size=size+chunk;
@@ -68,7 +76,7 @@ public class Arr<Type> implements Stack<Type> {
     @Override
     public Type pop() {
         int l=length();
-        assert l>1:"Stack is empty";
+        assert l>0:"Stack is empty";
         if(dir==1)
             return stack[top--];
         else
@@ -80,13 +88,13 @@ public class Arr<Type> implements Stack<Type> {
         if(dir==1)
             return top+1;
         else
-            return size-top;
+            return (size-top);
     }
 
     @Override
     public Type topValue() {
         int l=length();
-        assert l!=0:"Stack is empty";
+        assert l>0:"Stack is empty";
         return stack[top];
     }
 
@@ -103,17 +111,29 @@ public class Arr<Type> implements Stack<Type> {
     }
 
     public static void main(String[] args) {
-        Arr<Integer> a=new Arr<>(5,19);
-        a.push(1);
-        a.push(2);
-        a.push(3);
-        System.out.println(a.pop());
-        System.out.println(a.pop());
-        a.push(69);
-        System.out.println(a.pop());
-        System.out.println(a.length());
-        System.out.println(a.pop());
-        System.out.println(a.pop());
-    }
+        Integer[] arra=new Integer[6];
+        Arr<Integer> a1=new Arr<>(arra,1);
+        Arr<Integer> a2=new Arr<>(arra,-1);
+        a1.push(1);
+        a1.push(2);
+        a1.push(3);
+        a2.push(1);
+        a2.push(2);
+        a2.push(3);
+        for(int i=0;i<6;i++){
+            System.out.println(arra[i]);
+        }
+//        System.out.println(a2.pop());
+//        System.out.println(a2.pop());
+//        System.out.println(a2.pop());
+//        a2.pop();
+//        a2.pop();
+//        a2.pop();
+//        a1.pop();
+//        a1.pop();
+//        a1.pop();
 
+      //  System.out.println(a2.pop());
+       // System.out.println(a2.top);
+    }
 }

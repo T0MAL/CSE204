@@ -21,6 +21,8 @@ public class LL<Type> extends Node<Type> implements Stack<Type> {
 
     @Override
     public void clear() {
+        int l=length();
+        assert l>0:"Stack is empty";
         tailNode=headNode;
         size=0;
     }
@@ -34,6 +36,8 @@ public class LL<Type> extends Node<Type> implements Stack<Type> {
 
     @Override
     public Type pop() {
+        int l=length();
+        assert l>0:"Stack is empty";
         Type tmp= (Type) tailNode.getItem();
         tailNode.getPrev().setNext(null);
         tailNode=tailNode.getPrev();
@@ -48,6 +52,8 @@ public class LL<Type> extends Node<Type> implements Stack<Type> {
 
     @Override
     public Type topValue() {
+        int l=length();
+        assert l>0:"Stack is empty";
         return (Type) tailNode.getItem();
     }
 
