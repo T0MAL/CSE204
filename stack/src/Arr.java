@@ -1,5 +1,4 @@
 public class Arr<Type> implements Stack<Type> {
-
     private int size;
     private int top;
     private int chunk;
@@ -108,32 +107,5 @@ public class Arr<Type> implements Stack<Type> {
             top=-1;
             this.dir=dir;
         }
-    }
-
-    public static void main(String[] args) {
-        Integer[] arra=new Integer[6];
-        Arr<Integer> a1=new Arr<>(arra,1);
-        Arr<Integer> a2=new Arr<>(arra,-1);
-        a1.push(1);
-        a1.push(2);
-        a1.push(3);
-        a2.push(1);
-        a2.push(2);
-        a2.push(3);
-        for(int i=0;i<6;i++){
-            System.out.println(arra[i]);
-        }
-//        System.out.println(a2.pop());
-//        System.out.println(a2.pop());
-//        System.out.println(a2.pop());
-//        a2.pop();
-//        a2.pop();
-//        a2.pop();
-//        a1.pop();
-//        a1.pop();
-//        a1.pop();
-
-      //  System.out.println(a2.pop());
-       // System.out.println(a2.top);
     }
 }

@@ -1,27 +1,6 @@
 import java.util.Scanner;
 
 public class Dishwasher_Arr {
-    public static void print(Stack st){
-        int l= st.length();
-        int[] a=new int[l];
-        while(l>0){
-            int tmp= (int) st.pop();
-            a[l-1]=tmp;
-            l--;
-        }
-        System.out.print("<");
-        for (int i = 0; i <a.length; i++) {
-            if(i!=0)
-                System.out.print(" ");
-            System.out.print(a[i]);
-            st.push(a[i]);
-        }
-        System.out.print(">");
-        System.out.println();
-        // System.out.println(a);
-    }
-
-
     public static void main(String[] args) {
         int n,x;
         Scanner scn=new Scanner(System.in);

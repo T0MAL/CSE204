@@ -1,7 +1,4 @@
 public class LL<Type> extends Node<Type> implements Stack<Type> {
-
-
-
     private Node headNode;
     private Node tailNode;
     private int size;
@@ -16,7 +13,7 @@ public class LL<Type> extends Node<Type> implements Stack<Type> {
         headNode=new Node<Type>();
         //currentNode= headNode;
         tailNode=headNode;
-        size=0;
+        this.size=0;
     }
 
     @Override
@@ -59,6 +56,6 @@ public class LL<Type> extends Node<Type> implements Stack<Type> {
 
     @Override
     public void setDirection(int dir) {
-
+        //ignore
     }
 }

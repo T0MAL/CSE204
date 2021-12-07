@@ -19,13 +19,13 @@ public class Main {
         System.out.print(">");
         System.out.println();
        // System.out.println(a);
-
     }
     public static void main(String[] args) {
         Scanner scn = new Scanner(System.in);
         int size = scn.nextInt();
         int chunk = scn.nextInt();
-        LL<Integer> st=new LL<>();
+        Stack<Integer> st=new Arr<>(size,chunk);
+//        Stack<Integer> st=new LL<>();
         while (size > 0) {
             int n = scn.nextInt();
             st.push(n);
@@ -68,8 +68,6 @@ public class Main {
                 print(st);
                 System.out.println("-1");
             }
-
         }
     }
-
 }
