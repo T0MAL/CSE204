@@ -119,6 +119,5 @@ public class Dishwasher1A2S {
             else
                 System.out.println(wholeEater.pop()+1);
         }
-        print(clean);
     }
 }
