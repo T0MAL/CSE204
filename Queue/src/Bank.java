@@ -41,10 +41,10 @@ public class Bank {
                     timeBooth2= elapsedTime+q2.dequeue();
                 }
                 if(q1.length()==0&&timeBooth1<=elapsedTime&&q2.length()!=0) {
-                    timeBooth1 = elapsedTime + q2.dequeue();
+                    timeBooth1 = elapsedTime + q2.leaveQueue();
                 }
                 if(q2.length()==0&&timeBooth2<=elapsedTime&&q1.length()!=0) {
-                    timeBooth2 = elapsedTime + q1.dequeue();
+                    timeBooth2 = elapsedTime + q1.leaveQueue();
                 }
                 while(q1.length()-q2.length()>1){
                     q2.enqueue(q1.leaveQueue());
@@ -95,9 +95,9 @@ public class Bank {
                         timeBooth2= elapsedTime+q2.dequeue();
                     }
                     if(q1.length()==0&&timeBooth1<=elapsedTime&&q2.length()!=0)
-                        timeBooth1=elapsedTime+ q2.dequeue();
+                        timeBooth1=elapsedTime+ q2.leaveQueue();
                     if(q2.length()==0&&timeBooth2<=elapsedTime&&q1.length()!=0)
-                        timeBooth2=elapsedTime+ q1.dequeue();
+                        timeBooth2=elapsedTime+ q1.leaveQueue();
                     while(q1.length()-q2.length()>1){
                         q2.enqueue(q1.leaveQueue());
                     }
