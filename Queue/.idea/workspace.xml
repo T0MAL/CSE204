@@ -30,7 +30,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.Bank">
     <configuration name="Arr" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Arr" />
       <module name="Queue" />
@@ -59,10 +59,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
+      <option name="arquillianRunConfiguration">
+        <value>
+          <option name="containerStateName" value="" />
+        </value>
+      </option>
+      <option name="TEST_OBJECT" value="CLASS" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.Bank" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.LL" />
         <item itemvalue="Application.Arr" />
       </list>
@@ -82,6 +95,8 @@
       <workItem from="1639115975729" duration="28056000" />
       <workItem from="1639169959235" duration="24000" />
       <workItem from="1639485988301" duration="98000" />
+      <workItem from="1640061997415" duration="806000" />
+      <workItem from="1640064243419" duration="4396000" />
     </task>
     <servers />
   </component>

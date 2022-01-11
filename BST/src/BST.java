@@ -1,14 +1,11 @@
 public class BST {
     private Node root;
-    private int nodeCount;
     BST(){
         root=null;
-        nodeCount=0;
     }
 
     public void insert(int key){
         root=insertHelp(root,key);
-        nodeCount++;
         print(root);
         System.out.println();
     }
