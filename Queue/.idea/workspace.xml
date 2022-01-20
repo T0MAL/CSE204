@@ -29,6 +29,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
+    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RunManager" selected="Application.Bank">
     <configuration name="Arr" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
@@ -59,19 +60,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="ArquillianTestNG" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Bank" />
@@ -97,6 +85,7 @@
       <workItem from="1639485988301" duration="98000" />
       <workItem from="1640061997415" duration="806000" />
       <workItem from="1640064243419" duration="4396000" />
+      <workItem from="1642667415014" duration="66000" />
     </task>
     <servers />
   </component>

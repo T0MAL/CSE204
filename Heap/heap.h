@@ -12,10 +12,6 @@ void swap(int *x, int *y)
     *y = temp;
 }
 
-// void heapsort(vector<int> &v){
-    
-// }
-
 
 class Heap{
     private:
@@ -30,16 +26,16 @@ class Heap{
         }
     }
     void heapify(int n){
-        if(n>floor(heapSize)){
+        if(n>floor(heapSize/2)){
             return;
         }
         int l=2*n;
         int r=2*n+1;
         int max=n;
-        if(l<=heapSize&&arr[l]>arr[n]){
+        if(l<=heapSize&&arr[l]>arr[max]){
             max=l;
         }
-        if(r<=heapSize&&arr[r]>arr[n]){
+        if(r<=heapSize&&arr[r]>arr[max]){
             max=r;
         }
         if(max!=n){
@@ -48,17 +44,29 @@ class Heap{
         }
     }
     public:
-    Heap(){
-        arr=new int[10];
-        maxSize=9;
-        heapSize=0;
+    Heap(std::vector<int> &v){
+        maxSize=v.size();
+        heapSize=v.size();
+        arr=new int[maxSize+1];
+        for(int i=1;i<=heapSize;i++){
+            arr[i]=v[i-1];
+        }
+        //arr=v.data();
+        
+        for(int i=(floor(heapSize/2));i>0;i--){
+            heapify(i);
+        }
     }
-    Heap(int size){
+    
+    Heap(int size=10){
         arr=new int[size+1];
         maxSize=size;
         heapSize=0;
     }
     void insert(int n){
+        if(heapSize==maxSize){
+            return;
+        }
         arr[++heapSize]=n;
         insertHelp(heapSize);
     }
@@ -66,11 +74,25 @@ class Heap{
         return heapSize;
     }
     int getMax(){
+        // if(heapSize==0){
+        //     return ;
+        // }
         return arr[1];
     }
     void deleteKey(){
+        if(heapSize==0){
+            return;
+        }
         swap(&arr[1],&arr[heapSize--]);
-        heapify(arr[1]);
+        heapify(1);
     }
 
 };
+
+void heapsort(std::vector<int> &v){
+    Heap* h=new Heap(v);
+    for(int i=0;i<v.size();i++){
+        v[i]=h->getMax();
+        h->deleteKey();
+    }
+}
