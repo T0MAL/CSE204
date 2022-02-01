@@ -4,7 +4,7 @@ import java.util.*;
 public class Main {
     public static void main(String[] args) throws IOException {
         int t=0;
-        File file = new File("file.txt");
+        File file = new File("in.txt");
         Scanner input = new Scanner(file);
         t=input.nextInt();
         BufferedWriter bw=new BufferedWriter(new FileWriter("out.txt"));
@@ -13,28 +13,30 @@ public class Main {
             n=input.nextInt();
             x= input.nextInt();
             l= input.nextInt();
-            LinkedList<Integer> ll[]=new LinkedList[x+1];
+            LinkedList<Integer> adjL[]=new LinkedList[x+1];
             for(int i=1;i<=x;i++){
-                ll[i]=new LinkedList<>();
+                adjL[i]=new LinkedList<>();
                 for(int j=1;j+i<=x&&j<=n;j++){
-                    ll[i].add(i+j);
+                    adjL[i].add(i+j);
                 }
             }
-            HashMap<Integer,Integer> hm = new HashMap<Integer, Integer>();
+            HashMap<Integer,Integer> ladder = new HashMap<Integer, Integer>();
+            HashMap<Integer,Integer> snake = new HashMap<Integer, Integer>();
             for(int i=0;i<l;i++){
                 int f=input.nextInt();
                 int tail=input.nextInt();
-                ll[f].clear();
-                ll[f].add(tail);
-                hm.put(f,tail);
+                adjL[f].clear();
+                adjL[f].add(tail);
+                ladder.put(f,tail);
             }
 
             s= input.nextInt();
             for(int i=0;i<s;i++){
                 int f=input.nextInt();
                 int tail=input.nextInt();
-                ll[f].clear();
-                ll[f].add(tail);
+                adjL[f].clear();
+                adjL[f].add(tail);
+                snake.put(f,tail);
             }
             boolean[] tick=new boolean[x+1];
             tick[1]=true;
@@ -45,15 +47,15 @@ public class Main {
                 dist[i] = Integer.MAX_VALUE;
             }
             dist[1]=0;
-            LinkedList<Integer> lList=new LinkedList<Integer>();
-            lList.add(1);
-            while (lList.size()!=0){
-                int tmp=lList.poll();
+            LinkedList<Integer> q=new LinkedList<Integer>();
+            q.add(1);
+            while (q.size()!=0){
+                int tmp=q.poll();
                 //System.out.println(tmp+" ");
-                for(int i=0;i<ll[tmp].size();i++){
-                    int gg=ll[tmp].get(i);
+                for(int i=0;i<adjL[tmp].size();i++){
+                    int gg=adjL[tmp].get(i);
                     if(!tick[gg]) {
-                        lList.add(gg);
+                        q.add(gg);
                         dist[gg]=dist[tmp]+1;
                         prev[gg]=tmp;
                         tick[gg] = true;
@@ -64,7 +66,10 @@ public class Main {
             LinkedList<Integer> path = new LinkedList<Integer>();
             path.add(x);
             while (prev[path.getLast()] != -1) {
-                if(hm.containsKey(path.getLast())){
+                if(ladder.containsKey(path.getLast())){
+                    dist[x]--;
+                }
+                if(snake.containsKey(path.getLast())){
                     dist[x]--;
                 }
                 path.add(prev[path.getLast()]);

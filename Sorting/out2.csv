@@ -1,0 +1,6 @@
+n , Merge Sort , QuickSort , Randomized QuickSort , Insertion Sort , Quicksort with Sorted Input , Randomized Quicksort with SOrted Input , STL sort() func
+5,0,0,0,0,0,0,0
+10,0,0,0,0,0,0,0
+100,5e-005,0,5e-005,0,5e-005,0,0
+1000,0.0003,0.00045,0.0001,0.00095,0.0067,0.0042,0.0001
+10000,0.00345,0.00245,0.0025,0.07145,0.627,0.4401,0.00145
