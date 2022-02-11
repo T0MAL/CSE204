@@ -1,5 +1,5 @@
 #include <iostream>
-#include<algorithm>
+#include <algorithm>
 
 using namespace std;
 
@@ -12,7 +12,7 @@ int main()
         cin>>a[i];
     }
     sort(a,a+n,greater<int>());
-    int price=0;
+    long price=0;
     int i=0;
     int j=0;
     while(j<n){
@@ -24,5 +24,7 @@ int main()
         i++;
     }
     cout<<price<<endl;
+    cout<<sizeof(long)<<endl;
+    cout<<sizeof(long long)<<endl;;
     return 0;
 }
