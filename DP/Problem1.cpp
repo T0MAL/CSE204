@@ -1,15 +1,9 @@
 #include <bits/stdc++.h>
-
 using namespace std;
-
 
 void lcs(char* s1,char* s2,int m,int n){
     int arr[m+1][n+1];
     int dir[m+1][n+1];
-    // for(int i=0;i<=m;i++)
-    //     arr[i][0];
-    // for(int j=0;j<=n;j++)
-    //     arr[0][j];
     for(int i=0;i<=m;i++){
         for(int j=0;j<=n;j++){
             if(i==0||j==0){
@@ -32,7 +26,7 @@ void lcs(char* s1,char* s2,int m,int n){
     }
     char s[arr[m][n]+1];
     int i=m;
-    int j= n;
+    int j=n;
     int k= arr[m][n];
     s[k--]=0;
     while(i>0 && j>0){
@@ -49,7 +43,7 @@ void lcs(char* s1,char* s2,int m,int n){
         }
     }
     cout<<arr[m][n]<<endl;
-    cout<<s;
+    cout<<s<<endl;
 }
 
 int main()
